@@ -1,0 +1,284 @@
+        /* Works for whole page so everything covers the whole page.*/
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+  
+  /* 2.2 Header Styling
+
+  Use Flexbox:
+  Align logo/store name on the left.
+  Align navigation links on the right.
+  Add padding and background color for differentiation.*/
+  
+
+  nav{    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+#logo{display: block;}
+
+   #home{
+        display:flex;
+        flex-direction: row; 
+        gap: 50px;
+        list-style: none;
+    }
+
+    nav ul li{
+    cursor: pointer;
+    background-color: #5bc0de;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight:bold;
+}
+
+/*   
+  2.3 Footer Styling
+  
+  Center-align content with Flexbox.
+  Add padding and a top border for separation.   */
+
+  .footer {
+    grid-area:footer;
+    display: flex;
+    background-color: antiquewhite;
+    justify-content:center;
+    align-items: center;
+    padding: 1%;
+    border-top: 2px solid black;
+
+    
+}  
+
+/* 3. Categories Section
+Use a <ul> for category links (e.g., UX, HTML, CSS, JavaScript).
+Sidebar Styling:
+Use Flexbox to align items vertically.
+Fixed width for larger screens; collapse into a horizontal menu on smaller screens. */
+
+aside {
+    grid-area: aside;
+    display: gird;
+    flex-direction: column; /* Align items vertically */
+    background-color: whitesmoke;
+}
+
+aside ul{    
+    margin-bottom: 10px; /* Space between each category */  
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+   }
+
+   /* The .categories-sidebar container uses Flexbox to align the 
+   category links vertically (using flex-direction: column) for 
+   larger screens and horizontally (using flex-direction: row) 
+   for smaller screens */
+   /* For larger screens: Sidebar with fixed width 
+   */
+@media (min-width: 1024px) {
+    .categories-sidebar {
+        width: 200px; /* Set fixed width for larger screens */
+    }
+}
+/* For smaller screens: Collapse the sidebar into a horizontal menu 
+When the screen width is 1024px or smaller */
+@media (max-width: 1024px) {
+    .categories-sidebar {
+        flex-direction: row; /* Change layout to horizontal */
+        justify-content: space-between; /* Space out the links evenly */
+        justify-items: auto;
+    }}
+
+
+
+
+
+
+/* 4.2 Book Card Styling
+
+Use Flexbox:
+Stack items vertically with space between.
+Center-align content.
+Ensure uniform image size using object-fit and set width/height. */
+.book-card{
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center-align content */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    height: 400px; /* Fixed height to ensure uniformity */
+    width: 200px    ;
+    margin-bottom: 10%;
+}
+
+.book-author{
+    font-style: italic;
+}
+
+.book-price{
+    font-weight: bold;
+    background-color: beige;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.book-cover{
+    width: 150px;
+    height: 200px;
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    margin-bottom: 10px;
+}
+/* -------------------------- */
+/* 4. Book Display
+Each book card includes:
+Title (bold, centered).
+Cover image.
+Author and summary (small font below the title).
+Price (highlighted, bold).
+A static "Buy" button linking to cart.html.
+ */
+.book-title{
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Buy button formatting */
+.buy-button {
+    min-height: 25px;
+    text-decoration: none;
+    background-color: #5bc0de; /* Button color */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* buy button hover */
+.buy-button:hover {
+    background-color: #31b0d5; /* Button hover effect */
+}
+
+/* -------------------------- */
+
+/* 5. Filtering and Sorting Sections
+Create static subsections for:
+Books by price.
+Books by author.
+Use CSS Grid (similar to main book display).
+Add labels with <h2> tags. */
+
+/* #booksBy-price, #booksBy-author{
+    font-weight: bold;
+    color: purple;
+    text-align: center;
+    font-size: 1.7em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    
+
+} */
+/* check begin here */
+
+/* provide grid to whole page */
+body {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main-content"
+    "footer";
+    grid-template-rows: .1fr auto .1fr;
+    
+
+}
+
+
+
+main {
+    grid-area:main-content;
+    border: 2px solid black;
+    display: grid;
+    grid-template-areas:
+    "aside books-container as"
+    "aside filter-price as"
+    "aside filter-author as";
+    grid-template-columns: auto 3fr .3fr;
+    
+}
+/*4.1 Book Grid
+
+Use a CSS Grid:
+3 books per row on larger screens.
+Single-column layout for smaller screens.  */
+
+.books-container{
+    grid-area: books-container;
+    
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* For smaller screens: Single-column layout */
+@media(max-width:1024px){
+    .books-container{
+        grid-template-columns: 1fr;/* Single-column layout on smaller screens */
+    }
+}
+.book-by-price,
+.book-by-author{
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
+    font-style: oblique;
+    margin: 10px;
+}
+
+
+
+/* check end here----- */
+/* For Header logo and ul cart, home etc. */
+header {  
+    
+    grid-area:header;
+    align-items: center; /* Center items vertically */
+    background-color: white;
+    padding: 1rem;
+    top:0;
+    position: sticky;
+    
+}
+
+
+.top{
+    padding-right: 10x;
+    padding-bottom: 10x;
+    background-color: #3498db;  
+    border-radius: 50%;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+   
+}
+
+.top:hover{
+    background-color: #2980b9;
+}
+
+
+
+
+

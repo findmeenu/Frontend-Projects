@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Content</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+        <header>
+            <nav>
+                <img id="logo" src="images\logo.jpg" alt="Logo for Book Shop" height="100" width="100">
+                <ul id="home">
+                  <li><a>Home</a></li>  
+                  <li><a>Catagories</a></li> 
+                  <li><a>cart</a></li>
+                </ul>
+            </nav>
+        </header>
+    <div class="cart-container">
+        <h1>Cart Content</h1>
+        <div class="cart-grid">
+            <div class="cart-item">
+                <img src="images\Book1.jpg" alt="Book 1 Cover" class="book-cover">
+                <div class="book-details">
+                    <h2 class="book-title">Book Title 1</h2>
+                    <p class="book-price">Price: $15.99</p>
+                </div>
+                <div class="book-actions">
+                    <label for="quantity1">Quantity:</label>
+                    <input type="number" id="quantity1" value="1" min="1" class="quantity-input">
+                    <button class="remove-button">Remove</button>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="images\Book2.jpg" alt="Book 2 Cover" class="book-cover">
+                <div class="book-details">
+                    <h2 class="book-title">Book Title 2</h2>
+                    <p class="book-price">Price: $12.99</p>
+                </div>
+                <div class="book-actions">
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" value="1" min="1" class="quantity-input">
+                    <button class="remove-button">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="bottom">
+        <p>© Book Store AB,&nbsp</p>
+        <address>Elmetorpsvägen 15, 
+            291 39, Kristianstad</address>
+    </footer>
+</body>
+</html>
