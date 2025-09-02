@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Circle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-header">
+        <nav class="nav-bar" aria-label="Primary">
+            <a class="logo" href="#home-page">
+            <img class="logo2" src="./image/logo.jpg" alt="logo" width="80px">
+                    </a>
+            <div id="sub-header-container">
+                <button class="nav-button" data-target="home" >Home</button>
+                <button class="nav-button" data-target ="posts">Posts</button>
+                <button class="nav-button" data-target ="contact">Contact</button>
+            </div>        
+            <!-- <ul class="header-container">
+                <li>
+                    <a class="logo" href="#home-page">
+                <img class="logo2" src="./image/logo.jpg" alt="logo" width="80px">
+                    </a>
+                </li>
+                <ul id="sub-header-container">
+                    <li id="home" class="nav-button"><a href="#home-page" >Home</a></li>
+                    <li id="posts" class="nav-button"><a href="#posts" >Posts</a></li>
+                    <li id="contact" class="nav-button"><a href="#contact" >Contact</a></li>
+                </ul>
+                 </li>
+            </ul> -->
+
+        </nav>
+    </header>
+      
+   
+     <main>
+         <!-- Home Page Section -->
+     <section>
+        <div id="home" class="page">   
+        <h1 id="home-page">Welcome to Social Circle</h1>
+        <p>A lightweight, responsive demo that showcases posts, user profiles, and comments fetched from public APIs (DummyJSON). Use the navigation above to explore.</p>
+        <br><br>
+        <h2>How it Works ?</h2>
+        <ul>
+            <li class="about"><strong>Posts:        </strong></strong> Loads posts dynamically with pagination. 
+            Click a username to see a profile modal.</li>
+            <li class="about"><strong>Comments:</strong> Fetches comments per post. Shows 
+                “No comments available !” when empty.</li>
+            <li class="about"><strong>Contact: </strong>Validates Form: Name (no numbers), 
+                Email (must have “@” and “.”), and a confirmation checkbox that 
+                enables the Send button.</li>
+        </ul>
+        <br><br>
+    <div id="about">
+    Tip: Use the Posts tab to start browsing!
+    </div>
+</div>
+</section>
+
+<!-- Posts Page Section -->
+ <section>
+
+    <div class = "page post-container" id = "posts">
+       
+
+
+<!-- Cards will be injected here , will be child grid-->
+ <!-- template containw ill be child. template id="post-card-template-container -->
+
+   
+    <!-- Load more button created a seperate block for it. -->
+    <div class="load-more">
+        <button id="loadMoreBtn">Load more</button>
+    </div>
+ </div>
+      <!-- Card template button -->
+       <!-- will be grid child. -->
+      <template id="post-card-template-container">
+
+        <article id="article-card">
+
+          <header class="post-header">
+            <h2 id="title" class="post-title"></h2>
+            <button class="link-user" type="button"></button>
+          </header>
+        
+          <p class="post-body"></p>
+
+          <div class="meta">
+            <div class="tags"></div>
+            <div class="reactions" ></div>
+          </div>
+
+          <details class="comments-wrap">
+            <summary>Comments</summary>
+            <!-- <div class="comments"></div> -->
+          </details>
+        </article>
+      </template>
+
+      <template id="comment-item-template">
+        <div class="comment">
+          <p class="comment-body"></p>
+          <div class="comment-user"></div>
+        </div>
+      </template>
+
+ </section>
+
+
+
+
+<section >
+
+    <div id="contact" class="form-container page">
+        
+        <form id="contact-form" class="contact" action="">
+            <h2>Contact Us</h2>
+            
+            <p class="small-font">All fields are mandatory.</p>
+            <br>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Full Name"  size="40px" required>
+            <span id="nameError" class="error"></span>
+            <span id="nameCount" class="countDisplay"></span>
+            
+            
+
+<br>
+            <label for="email">Email</label>
+            <input type=" text" id="email" name="email" placeholder="name@example.com" size="40px" required>
+            <span id="emailError" class="error"></span> <span id="emailCount" class="countDisplay"></span>
+             
+            
+
+<br>
+            <input class="span" type="checkbox" id="confirm" required>
+            <label class="span" for="confirm">Confirm to send</label>
+            <span id="confirmError" class="error"></span>
+<br><br>
+            <button id="submit-button" class="submit-button"  type="submit" disabled>Send</button>
+            
+        </form>
+   </div>  
+</section>
+
+
+
+</main>
+<br><br>
+
+<dialog id="userDialog" class="user-dialog">
+  <button class="close" aria-label="Close">✕</button>
+  <article>
+    <h3 id="ud-name"></h3>
+    <p id="ud-username"></p>
+    <p><strong>Email:</strong> <span id="ud-email"></span></p>
+    <p><strong>Phone:</strong> <span id="ud-phone"></span></p>
+    <p><strong>Address:</strong> <span id="ud-address"></span></p>
+    <p><strong>Company:</strong> <span id="ud-company"></span></p>
+  </article>
+</dialog>
+
+
+<footer>
+
+    <div>
+     © SocialCircle. Data courtesy of DummyJSON.   
+    </div>
+</footer>
+
+
+
+<script type="module" src="main.js" ></script>
+</body>
+
+
+</html>
